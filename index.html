@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Tech Talk with Capgemini Special Edition II - Stop building monolithic frontends!</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <link rel="icon" href="common/img/favicon.ico">
+
+    <link rel="stylesheet" href="reveal.js-3.6.0/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js-3.6.0/css/theme/black.css">
+    <link rel="stylesheet" href="common/css/common.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="reveal.js-3.6.0/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <!-- <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script> -->
+    <style>
+        section.agenda ul {
+            list-style: none;
+            margin: 0;
+            color: var(--cap-white);
+        }
+        .highlight-cg-blue {
+            color: var(--cap-blue);
+        }
+        .highlight-cg-light-blue {
+            color: var(--cap-light-blue);
+        }
+    </style>
+</head>
+<body>
+<div class="devon reveal">
+    <div class="slides">
+        <section data-background-image="common/img/title-slide-hq.png">
+        </section>
+        <section>
+            <div style="display: flex; flex-direction: column">
+                <div style="display: flex; flex-direction: row" >
+                    <img src="common/img/mmatczak.png" style="width: 6em;border-radius: 50%; border: white solid .1em; align-self: center">
+                    <ul style="align-self: center" class="no-bullets">
+                        <li>1991 Started playing with coding on Atari 65XE</li>
+                        <li>2004 Started working for Capgemini</li>
+                        <li>2006 Implemented a big, monolithic application</li>
+                        <li>2013 Implemented application's frontend in JavaScript/AngularJS</li>
+                        <li>2015 Implemented a microservice-like application</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="" style="display: flex; flex-direction: column">
+                <div style="display: flex; flex-direction: row">1991...</div>
+            </div>
+        </section>
+        <section>
+            <div style="display: flex; flex-direction: column">
+                <div>For many years we have been building monoliths. And it was fine...</div>
+                <div>What happened that made monoliths no more valid solutions?</div>
+                <div>Time to market!!!!!!</div>
+                <div>So microservices came...</div>
+                <div>Let me show you this analogy..</div>
+            </div>
+        </section>
+        <section>
+            <h3>Will only the strongest survive?</h3>
+            <img height="500" class="no-shadow no-margin no-background" src="common/img/darwin/dinosaur-fausto-garcia-659812-unsplash.jpg" />
+            <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:block;border-radius:3px" href="https://unsplash.com/@faustogarmen?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Fausto García"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Fausto García</span></a>
+        </section>
+        <section>
+            <h3>As history shows... not necessary</h3>
+            <img height="500" class="no-shadow no-margin no-background" src="common/img/darwin/adam-muise-1342936-unsplash.jpg" />
+            <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:block;border-radius:3px" href="https://unsplash.com/@muiseadam?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Adam Muise"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Adam Muise</span></a>
+        </section>
+        <section>
+            <h3>So, who will survive?</h3>
+            <div style="display: flex; flex-direction: row; align-items: center; align-content: center">
+                <div style="margin-right: 1em; flex: 1 1 auto">
+                    <p style="text-align: right"><q>It is not the strongest of the species that survive, nor the most intelligent, but <strong class="highlight-cg-light-blue">the one most responsive to change</strong>.</q></p>
+                    <p style="margin-top: 1em; text-align: right"><small>Charles Darwin (1809-1882)</small></p>
+                </div>
+                <div style="width: 30em; display: flex; flex-direction: column; align-items: center;">
+                    <img class="no-shadow no-margin no-background" src="common/img/darwin/charles-darwin-portrait-vector-file.png" />
+                    <div style="font-size: small">Photo via <a href="https://www.goodfreephotos.com/vector-images/charles-darwin-portrait-vector-file.png.php" target="_blank">Good Free Photos</a></div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="white" style="display: flex; flex-direction: column">
+                <div>So we started building applications based on the microservices idea...</div>
+                <div>Actually, we thought we did...</div>
+                <div>Mostly, we have been building BACKEND microservices and MONOLITHIC frontends</div>
+                <div>Let us think why... Let's start with the definition</div>
+            </div>
+        </section>
+        <section>
+            <h3>But... there is no formal definition...</h3>
+            <div style="display: flex; flex-direction: row; align-items: center; align-content: center">
+                <div style="margin-right: 1em">
+                    <p style="text-align: right"><q>We <span class="highlight-cg-light-blue">cannot say there is a formal definition</span>
+                        of
+                        the microservices architectural style, but we can attempt to describe what we see as
+                        <span class="highlight-cg-light-blue">common characteristics</span> for architectures that fit
+                        the label.</q></p>
+                </div>
+                <div style="width: 20em; display: flex; flex-direction: column; align-items: center;">
+                    <img src="common/img/martin-fowler.jpg"
+                         style="border-radius: 50%; border: white solid .1em; align-self: center">
+                    <small><a
+                            href="https://martinfowler.com/articles/microservices.html#CharacteristicsOfAMicroserviceArchitecture"
+                            target="_blank">Martin Fowler</a></small>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div style="display: flex; flex-direction: row; align-items: center; align-content: center">
+                <div style="width: 20em; display: flex; flex-direction: column; align-items: center;align-self: flex-start">
+                    <img src="common/img/martin-fowler.jpg" style="border-radius: 50%; border: white solid .1em; align-self: center">
+                    <small><a href="https://martinfowler.com/articles/microservices.html#CharacteristicsOfAMicroserviceArchitecture" target="_blank">Martin Fowler</a></small>
+                </div>
+                <img style="" class="no-border no-margin no-shadow" height="600" src="common/img/microservices-characteristics-dark.png">
+            </div>
+        </section>
+        <section>
+            <h3 style="text-align: left">Microservices organized around business capabilities...</h3>
+            <div style="display: flex; flex-direction: row; align-items: center; align-content: center">
+                    <div style="margin-right: 1em">
+                        <p style="text-align: right"><q>...take a broad-stack implementation of software for that business area, <span class="highlight-cg-light-blue">including user-interface</span>, persistant storage, and any external collaborations</q></p>
+                    </div>
+                    <div style="width: 20em; display: flex; flex-direction: column; align-items: center;">
+                        <img src="common/img/martin-fowler.jpg" style="height: 4em; border-radius: 50%; border: white solid .1em; align-self: center">
+                        <small><a href="https://martinfowler.com/articles/microservices.html#OrganizedAroundBusinessCapabilities" target="_blank">Martin Fowler</a></small>
+                    </div>
+            </div>
+        </section>
+        <section>
+            <h3>So why have we been building it differently?</h3>
+            <ol>
+                <li class="fragment">It's not easy to integrate frontends</li>
+                <li class="fragment">We learned from examples of different systems than we build...
+                    <div style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: center">
+                        <img height="100" style="margin-right: 1em;" class="no-background no-border no-shadow" src="common/img/logos/twitter-logo-white-transparent.png">
+                        <img height="100" class="no-background no-border no-shadow" src="common/img/logos/amazon-logo-transparent-white.png">
+                    </div>
+                    <div style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: center">
+                        <img height="150" class="no-margin no-background no-border no-shadow" src="common/img/logos/netflix-logo-transparent.png">
+                        <img height="70" class="no-background no-border no-shadow" src="common/img/logos/uber-logo-transparent-white.png">
+                    </div>
+                </li>
+            </ol>
+        </section>
+        <section>
+            <h3 style="text-align: left">We build <span class="highlight-cg-light-blue">enterprise applications</span> which...</h3>
+            <div style="display: flex; flex-direction: row; align-items: center; align-content: center">
+                <div style="margin-right: 1em">
+                    <ul>
+                        <li>have <span class="highlight-cg-light-blue">a lot of persistent data</span> accessed and manipulated concurrently</li>
+                        <li>have <span class="highlight-cg-light-blue">a lot of user interface screens</span></li>
+                        <li>are mostly <span class="highlight-cg-light-blue">in-house</span> applications</li>
+                        <li>have <span class="highlight-cg-light-blue">complex business "illogic"</span> :)</li>
+                    </ul>
+                </div>
+                <div style="width: 10em; display: flex; flex-direction: column; align-items: center;">
+                    <a href="https://martinfowler.com/bliki/EnterpriseApplication.html" target="_blank"><img class="no-margin no-background no-shadow" src="common/img/eaa-book.jpg" style="align-self: center"></a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3 style="text-align: left">Comparing <span class="highlight-cg-light-blue">enterprise applications</span> to Netflix...</h3>
+            <div style="display: flex; flex-direction: row; align-items: center; align-content: center">
+                <a href="https://martinfowler.com/bliki/EnterpriseApplication.html" target="_blank"><img width="500" class="no-margin no-border no-background no-shadow" src="common/img/netflix-case.png" style="align-self: center"></a>
+                <img width="500" class="no-margin no-border no-background no-shadow" src="common/img/netflix-screen.png" style="align-self: center">
+            </div>
+        </section>
+        <section>
+            <h3 style="text-align: left">Comparing <span class="highlight-cg-light-blue">enterprise applications</span> to Netflix...</h3>
+            <div style="display: flex; flex-direction: row; align-items: center; align-content: center">
+                <div style="margin-right: 1em">
+                    <ul>
+                        <li>there is <span class="highlight-cg-light-blue">a lot of persistent data</span>, but the
+                            <span class="highlight-cg-light-blue">data model is rather small</span></li>
+                        <li>there are <span class="highlight-cg-light-blue">much fewer user interface screens</span>,
+                            but many <span class="highlight-cg-light-blue">client devices</span></li>
+                        <li>applications are <span class="highlight-cg-light-blue">customer-facing</span></li>
+                    </ul>
+                </div>
+                <div style="width: 10em; display: flex; flex-direction: column; align-items: center; align-self: flex-start">
+                    <a href="https://medium.com/netflix-techblog/optimizing-the-netflix-api-5c9ac715cf19" target="_blank"><img class="no-margin no-border no-background no-shadow" src="common/img/netflix-case.png" style="align-self: center"></a>
+                    <img class="no-margin no-border no-background no-shadow" src="common/img/netflix-screen.png" style="align-self: center">
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3 style="display: flex; align-items: center; justify-content: center;">This led <img height="150" class="no-margin no-background no-border no-shadow" src="common/img/logos/netflix-logo-transparent.png"> to...</h3>
+        </section>
+        <section data-background-image="common/img/monolithic-frontend-2.png">
+        </section>
+        <section>
+            <h3>Enterprise applications are organized around business units...</h3>
+        </section>
+        <section data-background-image="common/img/micro-frontends.png">
+        </section>
+        <section>
+            <h3>How to implement this architecture?</h3>
+        </section>
+        <section data-transition="none">
+            <img class="no-border no-margin no-shadow" height="600" src="common/img/ui-integration-methods-dark.png">
+        </section>
+        <section data-transition="none">
+            <img class="no-border no-margin no-shadow" height="600" src="common/img/selected-ui-integration-methods-dark.png">
+        </section>
+        <section data-transition="none">
+            <div style="position: relative">
+                <img class="no-border no-margin no-shadow" height="600" src="common/img/ui-integration-decision-tree-dark.png">
+                <div style="position: absolute; left: 4em; bottom: 2em; display: flex; flex-direction: column">
+                    <img class="no-shadow no-margin" height="100" src="common/img/mafred-steyer.jpg" style="border-radius: 50%; border: white solid .1em; align-self: center">
+                    <small><a href="https://www.softwarearchitekt.at/post/2017/12/28/a-software-architect-s-approach-towards-using-angular-and-spas-in-general-for-microservices-aka-microfrontends.aspx" target="_blank">Manfred Steyer</a></small>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>Hyperlinks</h3>
+            <div style="display: flex; flex-direction: row; align-items: center; align-content: center">
+                <div style="margin-right: 1em">
+                    <ul>
+                        <li>Extremely <span class="highlight-cg-light-blue">simple</span> integration</li>
+                        <li>Microservice UIs have to be <span class="highlight-cg-light-blue">bootstrapped</span> each time when switching between them</li>
+                        <li>Microservice UIs' <span class="highlight-cg-light-blue">state is lost</span>, unless the UIs are able to store and and restore their state (e.g. Redux)</li>
+                    </ul>
+                </div>
+                <div style="width: 20em; display: flex; flex-direction: column; align-items: center; align-self: flex-start">
+                    <img class="no-margin no-border no-background no-shadow" src="common/img/hyperlinks-google.png" style="align-self: center">
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>"Majestic Monolith"</h3>
+            <div style="display: flex; flex-direction: row; align-items: center; align-content: center">
+                <div style="margin-right: .5em">
+                    <ul>
+                        <li>Microservices UI's are <span class="highlight-cg-light-blue">npm packages</span> and as such
+                            can be <span class="highlight-cg-light-blue">versioned and distributed</span>; both <span class="highlight-cg-light-blue">mono-repo and multi-repo patterns</span> are possible</li>
+                        <li>All modules are integrated into one (Single Page) application <span class="highlight-cg-light-blue">at build time</span> (<span class="highlight-cg-light-blue">no deployment at runtime</span> possible)</li>
+                    </ul>
+                </div>
+                <div style="width: 25em; display: flex; flex-direction: column; align-items: center; align-self: flex-start">
+                    <img class="no-margin no-background no-shadow" src="common/img/monorepo.png" style="align-self: center">
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>Web Components...</h3>
+            <p style="text-align: justify">...are a set of web platform APIs that allow you to create new <span class="highlight-cg-light-blue">custom, reusable, encapsulated HTML tags</span> to use in web pages and web apps</p>
+            <p style="text-align: right" class="highlight-cg-light-blue"><small><a href="https://www.webcomponents.org/introduction" target="_blank">webcomponents.org</a></small></p>
+        </section>
+        <section>
+            <h3>What if...</h3>
+            <p style="text-align: left">...we exported the whole <span class="highlight-cg-light-blue">Microservice UI as a Web Component</span>?</p>
+            <p style="text-align: left">We could then easily <span class="highlight-cg-light-blue">integrate the Microservice UIs</span> within the shell :)</p>
+            <p style="text-align: left"><a href="https://github.com/vuejs/vue-web-component-wrapper" target="_blank"><span class="highlight-cg-light-blue">@vue/vue-web-component-wrapper</span></a> and <a href="https://angular.io/guide/elements" target="_blank"><span class="highlight-cg-light-blue">Angular Elements</span></a> allow to export Angular and Vue.js components as Web Components</p>
+        </section>
+        <section>
+            <h3>&lt;iframe&gt;...</h3>
+            <p style="text-align: left">...represents <span class="highlight-cg-light-blue">a nested browsing context (having its own session history and document)</span>, embedding another HTML page into the current one</p>
+            <p style="text-align: left">...can communicate with the parent browsing context (window) and other &lt;iframe&gt;s using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage" target="_blank"><span class="highlight-cg-light-blue">Window.postMessage()</span></a></p>
+            <p style="text-align: left">...has limited styling features, e.g. scrolling</p>
+        </section>
+        <section>
+            <h3>&lt;iframe&gt;'s own browsing context...</h3>
+            <p style="text-align: left">...requires <span class="highlight-cg-light-blue">increased memory and other computing resources</span>; BTW: how many browser tabs do you typically have open? :)</p>
+            <p style="text-align: left">...requires a meta router to keep its session history in sync with the parent's one (to see URL changes or to add bookmarks)</p>
+        </section>
+        <section>
+            <h3>How to put all these pieces together to work well for enterprises?</h3>
+        </section>
+        <section>
+            <h3>"Working well" means...</h3>
+            <ul>
+                <li>Microservice UIs are <span class="highlight-cg-light-blue">technologically independent</span></li>
+                <li>Microservice UIs use <span class="highlight-cg-light-blue">modern JavaScript frameworks</span> making development efficient</li>
+                <li>Any shared components are <span class="highlight-cg-light-blue">implemented as Web Components</span> to achieve <span class="highlight-cg-light-blue">interoperability</span></li>
+            </ul>
+        </section>
+    </div>
+</div>
+
+
+<script src="reveal.js-3.6.0/lib/js/head.min.js"></script>
+<script src="reveal.js-3.6.0/js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+        ]
+    });
+</script>
+</body>
+</html>
